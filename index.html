@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformation Sequences and Symmetry</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Print Worksheet Section -->
+    <div class="print-worksheet">
+        <div class="worksheet-header">
+            <h1>Transformation Sequences and Symmetry</h1>
+            <p class="worksheet-subtitle">Compositions of Transformations and Mapping Figures</p>
+            <div class="worksheet-info">
+                <span>Name: _______________________</span>
+                <span>Date: _____________</span>
+                <span>Period: _______</span>
+            </div>
+            <div class="worksheet-standard">Standard: MA.912.GR.2.3</div>
+        </div>
+
+        <div class="worksheet-section">
+            <h2>Key Concepts</h2>
+            <div class="worksheet-concept-box">
+                <p><strong>Composition:</strong> Performing multiple transformations in sequence</p>
+                <p><strong>Order Matters:</strong> Different orders can produce different results</p>
+                <p><strong>Symmetry:</strong> A figure has symmetry if it maps onto itself</p>
+                <p><strong>Line Symmetry:</strong> Reflection over a line maps figure onto itself</p>
+                <p><strong>Rotational Symmetry:</strong> Rotation by less than 360° maps figure onto itself</p>
+                <p><strong>Glide Reflection:</strong> Translation followed by reflection over a parallel line</p>
+            </div>
+        </div>
+
+        <div class="worksheet-section">
+            <h2>Part A: Order of Transformations</h2>
+            <p class="worksheet-instructions">Does the order matter? Write YES or NO.</p>
+            <div class="worksheet-problems">
+                <div class="worksheet-problem">
+                    <span class="problem-number">1.</span>
+                    <span>Two translations in sequence</span>
+                    <span class="answer-blank">_______</span>
+                </div>
+                <div class="worksheet-problem">
+                    <span class="problem-number">2.</span>
+                    <span>Rotation then reflection vs reflection then rotation</span>
+                    <span class="answer-blank">_______</span>
+                </div>
+                <div class="worksheet-problem">
+                    <span class="problem-number">3.</span>
+                    <span>Dilation then translation vs translation then dilation</span>
+                    <span class="answer-blank">_______</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="worksheet-section">
+            <h2>Part B: Symmetry</h2>
+            <p class="worksheet-instructions">Identify the type of symmetry.</p>
+            <div class="worksheet-problems">
+                <div class="worksheet-problem">
+                    <span class="problem-number">4.</span>
+                    <span>How many lines of symmetry does a regular hexagon have?</span>
+                    <span class="answer-blank">_______</span>
+                </div>
+                <div class="worksheet-problem">
+                    <span class="problem-number">5.</span>
+                    <span>What is the smallest rotation that maps a square onto itself?</span>
+                    <span class="answer-blank">_______</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="worksheet-section">
+            <h2>Part C: Apply Your Knowledge</h2>
+            <div class="worksheet-problems">
+                <div class="worksheet-problem">
+                    <span class="problem-number">6-10.</span>
+                    <span>Mixed practice problems on transformation compositions</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Interactive Content -->
+    <div class="container no-print">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>Transformation Sequences and Symmetry</h1>
+                <div class="standards-box">
+                    <span class="standard-tag">MA.912.GR.2.3</span>
+                </div>
+            </div>
+            <button class="worksheet-btn" onclick="printWorksheet()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 9V2h12v7"></path>
+                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                    <rect x="6" y="14" width="12" height="8"></rect>
+                </svg>
+                Print Worksheet
+            </button>
+        </header>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text" id="progressText">0%</div>
+            <div class="phase-indicators">
+                <div class="phase-dot active" data-phase="1">1</div>
+                <div class="phase-dot" data-phase="2">2</div>
+                <div class="phase-dot" data-phase="3">3</div>
+                <div class="phase-dot" data-phase="4">4</div>
+                <div class="phase-dot" data-phase="5">5</div>
+            </div>
+        </div>
+
+        <!-- Phase 1: Introduction -->
+        <div class="content-card active" id="phase1">
+            <div class="phase-header">
+                <span class="phase-number">Phase 1</span>
+                <h2>Compositions of Transformations</h2>
+            </div>
+
+            <div class="intro-content">
+                <div class="concept-highlight">
+                    <div class="concept-icon">
+                        <svg viewBox="0 0 120 100" width="120" height="90">
+                            <!-- Original shape -->
+                            <polygon points="15,70 30,40 45,70" fill="none" stroke="#7c3aed" stroke-width="2"/>
+                            <!-- Arrow 1 -->
+                            <path d="M48,55 L62,55" fill="none" stroke="#10b981" stroke-width="2"/>
+                            <text x="55" y="48" font-size="6" fill="#10b981">T₁</text>
+                            <!-- Middle shape -->
+                            <polygon points="65,70 80,40 95,70" fill="none" stroke="#7c3aed" stroke-width="2" stroke-dasharray="3"/>
+                            <!-- Arrow 2 -->
+                            <path d="M85,35 C90,25 100,25 105,35" fill="none" stroke="#f59e0b" stroke-width="2"/>
+                            <text x="92" y="20" font-size="6" fill="#f59e0b">T₂</text>
+                            <!-- Final shape -->
+                            <polygon points="95,30 110,60 80,60" fill="none" stroke="#7c3aed" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="concept-text">
+                        <h3>What is a Composition?</h3>
+                        <p>A <strong>composition of transformations</strong> is when we apply two or more transformations one after another. The result of one transformation becomes the input for the next!</p>
+                    </div>
+                </div>
+
+                <div class="learning-objectives">
+                    <h3>Today's Learning Objectives</h3>
+                    <ul>
+                        <li>Apply multiple transformations in sequence</li>
+                        <li>Understand that order matters in transformation sequences</li>
+                        <li>Connect symmetry to transformations that map figures onto themselves</li>
+                        <li>Map figures onto congruent and similar figures using sequences</li>
+                        <li>Solve problems involving compositions of transformations</li>
+                    </ul>
+                </div>
+
+                <div class="key-concepts">
+                    <h3>Important Concepts</h3>
+
+                    <div class="concept-card">
+                        <div class="concept-visual">
+                            <div class="transform-box order">
+                                <span class="transform-icon">1→2</span>
+                                <span class="transform-label">Order</span>
+                            </div>
+                        </div>
+                        <div class="concept-info">
+                            <h4>Order Matters!</h4>
+                            <p>The order in which you apply transformations can change the final result.</p>
+                            <p class="example">Reflect then rotate ≠ Rotate then reflect (usually!)</p>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <div class="concept-visual">
+                            <div class="transform-box line-sym">
+                                <span class="transform-icon">|</span>
+                                <span class="transform-label">Line Sym</span>
+                            </div>
+                        </div>
+                        <div class="concept-info">
+                            <h4>Line Symmetry</h4>
+                            <p>A figure has line symmetry if reflecting it over a line maps it onto itself.</p>
+                            <p class="example">A butterfly has 1 line of symmetry down its center!</p>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <div class="concept-visual">
+                            <div class="transform-box rot-sym">
+                                <span class="transform-icon">↻</span>
+                                <span class="transform-label">Rot Sym</span>
+                            </div>
+                        </div>
+                        <div class="concept-info">
+                            <h4>Rotational Symmetry</h4>
+                            <p>A figure has rotational symmetry if rotating it less than 360° maps it onto itself.</p>
+                            <p class="example">A square maps onto itself every 90° rotation!</p>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <div class="concept-visual">
+                            <div class="transform-box glide">
+                                <span class="transform-icon">↗↔</span>
+                                <span class="transform-label">Glide</span>
+                            </div>
+                        </div>
+                        <div class="concept-info">
+                            <h4>Glide Reflection</h4>
+                            <p>A translation followed by a reflection over a line parallel to the translation direction.</p>
+                            <p class="example">Footprints in sand show glide reflection!</p>
+                        </div>
+                    </div>
+
+                    <div class="formula-highlight">
+                        <h4>Key Insight</h4>
+                        <div class="formula-box">Composition of rigid transformations → Congruent figures</div>
+                        <p class="formula-note">If any transformation in the sequence is a dilation, the result is similar (not congruent).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="nav-btn secondary" disabled>Previous</button>
+                <button class="nav-btn primary" onclick="nextPhase()">Continue to Video</button>
+            </div>
+        </div>
+
+        <!-- Phase 2: Video -->
+        <div class="content-card" id="phase2">
+            <div class="phase-header">
+                <span class="phase-number">Phase 2</span>
+                <h2>Video Lesson</h2>
+            </div>
+
+            <div class="video-container">
+                <iframe
+                    src="https://www.youtube.com/embed/0Z1aUhGCZs0"
+                    title="Transformation Sequences and Symmetry"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="video-notes">
+                <h3>Key Takeaways</h3>
+                <ul>
+                    <li>Compositions combine multiple transformations</li>
+                    <li>Order of operations matters for most combinations</li>
+                    <li>Symmetry means a transformation maps a figure onto itself</li>
+                    <li>Regular polygons have both line and rotational symmetry</li>
+                    <li>Glide reflections are common in real-world patterns</li>
+                </ul>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="nav-btn secondary" onclick="prevPhase()">Previous</button>
+                <button class="nav-btn primary" onclick="nextPhase()">Continue to Practice</button>
+            </div>
+        </div>
+
+        <!-- Phase 3: Guided Practice -->
+        <div class="content-card" id="phase3">
+            <div class="phase-header">
+                <span class="phase-number">Phase 3</span>
+                <h2>Guided Practice</h2>
+            </div>
+
+            <p class="phase-description">Work through these exercises step by step. Complete all 4 exercises to continue.</p>
+
+            <!-- Exercise 1: Order of Transformations -->
+            <div class="exercise-container" id="exercise1">
+                <div class="exercise-header">
+                    <span class="exercise-number">Exercise 1</span>
+                    <h3>Does Order Matter?</h3>
+                </div>
+
+                <div class="problem-display">
+                    <div class="relation-display">
+                        <svg viewBox="0 0 200 100" width="200" height="100" class="triangle-svg">
+                            <!-- Starting point -->
+                            <circle cx="40" cy="50" r="8" fill="#7c3aed" opacity="0.3"/>
+                            <text x="40" y="54" font-size="8" fill="#7c3aed" text-anchor="middle">A</text>
+                            <!-- Path 1: Translate then Rotate -->
+                            <path d="M50,50 L90,50" stroke="#10b981" stroke-width="2" stroke-dasharray="4"/>
+                            <path d="M90,50 Q100,30 110,50" stroke="#10b981" stroke-width="2"/>
+                            <circle cx="110" cy="50" r="6" fill="#10b981" opacity="0.5"/>
+                            <text x="80" y="40" font-size="6" fill="#10b981">Path 1</text>
+                            <!-- Path 2: Rotate then Translate -->
+                            <path d="M40,58 Q30,70 40,80" stroke="#f59e0b" stroke-width="2"/>
+                            <path d="M40,80 L90,80" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4"/>
+                            <circle cx="90" cy="80" r="6" fill="#f59e0b" opacity="0.5"/>
+                            <text x="60" y="95" font-size="6" fill="#f59e0b">Path 2</text>
+                        </svg>
+                    </div>
+                    <div class="problem-text">
+                        <p>Compare: (Translate then Rotate) vs (Rotate then Translate)</p>
+                        <p class="hint">Do they end up in the same place?</p>
+                    </div>
+                </div>
+
+                <div class="step-container visible active" id="ex1-step1">
+                    <div class="step-header">
+                        <span class="step-badge">Step 1</span>
+                        <span>If you translate a point right, then rotate around the origin, where does it go?</span>
+                    </div>
+                    <div class="step-content">
+                        <div class="choice-group">
+                            <button class="choice-btn" onclick="checkStep1Ex1('far')">Farther from origin after rotation</button>
+                            <button class="choice-btn" onclick="checkStep1Ex1('same')">Same distance from origin</button>
+                        </div>
+                        <span class="result-badge" id="ex1-result1"></span>
+                    </div>
+                </div>
+
+                <div class="step-container hidden" id="ex1-step2">
+                    <div class="step-header">
+                        <span class="step-badge">Step 2</span>
+                        <span>Does the order of rotation and translation usually produce the same final position?</span>
+                    </div>
+                    <div class="step-content">
+                        <div class="choice-group">
+                            <button class="choice-btn" onclick="checkStep2Ex1('no')">No, order matters!</button>
+                            <button class="choice-btn" onclick="checkStep2Ex1('yes')">Yes, same result either way</button>
+                        </div>
+                        <span class="result-badge" id="ex1-result2"></span>
+                    </div>
+                </div>
+
+                <div class="step-container hidden" id="ex1-step3">
+                    <div class="step-header complete">
+                        <span class="step-badge success">Complete!</span>
+                        <span>For most transformation pairs, order matters! The exception: two translations always commute.</span>
+                    </div>
+                    <button class="continue-btn" onclick="completeExercise(1)">Continue to Exercise 2</button>
+                </div>
+            </div>
+
+            <!-- Exercise 2: Line Symmetry -->
+            <div class="exercise-container" id="exercise2" style="display: none;">
+                <div class="exercise-header">
+                    <span class="exercise-number">Exercise 2</span>
+                    <h3>Line Symmetry</h3>
+                </div>
+
+                <div class="problem-display">
+                    <div class="relation-display">
+                        <svg viewBox="0 0 200 100" width="200" height="100" class="triangle-svg">
+                            <!-- Equilateral triangle -->
+                            <polygon points="100,15 60,75 140,75" fill="rgba(124,58,237,0.2)" stroke="#7c3aed" stroke-width="2"/>
+                            <!-- Line of symmetry (vertical) -->
+                            <line x1="100" y1="10" x2="100" y2="85" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4"/>
+                            <!-- Other lines of symmetry hints -->
+                            <line x1="60" y1="75" x2="120" y2="25" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4" opacity="0.5"/>
+                            <line x1="140" y1="75" x2="80" y2="25" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <div class="problem-text">
+                        <p>An equilateral triangle has special symmetry properties.</p>
+                        <p class="hint">Each line of symmetry goes from a vertex to the midpoint of the opposite side.</p>
+                    </div>
+                </div>
+
+                <div class="step-container visible active" id="ex2-step1">
+                    <div class="step-header">
+                        <span class="step-badge">Step 1</span>
+                        <span>How many vertices does an equilateral triangle have?</span>
+                    </div>
+                    <div class="step-content">
+                        <div class="choice-group">
+                            <button class="choice-btn" onclick="checkStep1Ex2('3')">3 vertices</button>
+                            <button class="choice-btn" onclick="checkStep1Ex2('4')">4 vertices</button>
+                        </div>
+                        <span class="result-badge" id="ex2-result1"></span>
+                    </div>
+                </div>
+
+                <div class="step-container hidden" id="ex2-step2">
+                    <div class="step-header">
+                        <span class="step-badge">Step 2</span>
+                        <span>Each vertex connects to a line of symmetry. How many lines of symmetry does an equilateral triangle have?</span>
+                    </div>
+                    <div class="step-content">
+                        <div class="choice-group">
+                            <button class="choice-btn" onclick="checkStep2Ex2('1')">1 line</button>
+                            <button class="choice-btn" onclick="checkStep2Ex2('3')">3 lines</button>
+                        </div>
+                        <span class="result-badge" id="ex2-result2"></span>
+                    </div>
+                </div>
+
+                <div class="step-container hidden" id="ex2-step3">
+                    <div class="step-header complete">
+                        <span class="step-badge success">Complete!</span>
+                        <span>An equilateral triangle has 3 lines of symmetry - one from each vertex to the opposite side's midpoint!</span>
+                    </div>
+                    <button class="continue-btn" onclick="completeExercise(2)">Continue to Exercise 3</button>
+                </div>
+            </div>
+
+            <!-- Exercise 3: Rotational Symmetry -->
+            <div class="exercise-container" id="exercise3" style="display: none;">
+                <div class="exercise-header">
+                    <span class="exercise-number">Exercise 3</span>
+                    <h3>Rotational Symmetry</h3>
+                </div>
+
+                <div class="problem-display">
+                    <div class="relation-display">
+                        <svg viewBox="0 0 200 100" width="200" height="100" class="triangle-svg">
+                            <!-- Regular pentagon -->
+                            <polygon points="100,15 145,40 130,85 70,85 55,40" fill="rgba(124,58,237,0.2)" stroke="#7c3aed" stroke-width="2"/>
+                            <!-- Rotation arrow -->
+                            <path d="M160,50 A50,50 0 0,1 140,80" fill="none" stroke="#10b981" stroke-width="2"/>
+                            <polygon points="138,75 140,80 145,77" fill="#10b981"/>
+                            <text x="165" y="65" font-size="8" fill="#10b981">72°</text>
+                        </svg>
+                    </div>
+                    <div class="problem-text">
+                        <p>A regular pentagon has 5 equal sides and 5 equal angles.</p>
+                        <p class="hint">Think: What rotation angle would map each vertex to the next?</p>
+                    </div>
+                </div>
+
+                <div class="step-container visible active" id="ex3-step1">
+                    <div class="step-header">
+                        <span class="step-badge">Step 1</span>
+                        <span>A full rotation is 360°. If a pentagon has 5 equal sections, what is 360° ÷ 5?</span>
+                    </div>
+                    <div class="step-content">
+                        <div class="choice-group">
+                            <button class="choice-btn" onclick="checkStep1Ex3('72')">72°</button>
+                            <button class="choice-btn" onclick="checkStep1Ex3('60')">60°</button>
+                        </div>
+                        <span class="result-badge" id="ex3-result1"></span>
+                    </div>
+                </div>
+
+                <div class="step-container hidden" id="ex3-step2">
+                    <div class="step-header">
+                        <span class="step-badge">Step 2</span>
+                        <span>How many times can you rotate a pentagon (less than 360°) and have it map onto itself?</span>
+                    </div>
+                    <div class="step-content">
+                        <div class="choice-group">
+                            <button class="choice-btn" onclick="checkStep2Ex3('4')">4 times (72°, 144°, 216°, 288°)</button>
+                            <button class="choice-btn" onclick="checkStep2Ex3('5')">5 times</button>
+                        </div>
+                        <span class="result-badge" id="ex3-result2"></span>
+                    </div>
+                </div>
+
+                <div class="step-container hidden" id="ex3-step3">
+                    <div class="step-header complete">
+                        <span class="step-badge success">Complete!</span>
+                        <span>A regular pentagon has rotational symmetry of order 5 (maps onto itself at 72°, 144°, 216°, 288°, and 360°)!</span>
+                    </div>
+                    <button class="continue-btn" onclick="completeExercise(3)">Continue to Exercise 4</button>
+                </div>
+            </div>
+
+            <!-- Exercise 4: Composition Result -->
+            <div class="exercise-container" id="exercise4" style="display: none;">
+                <div class="exercise-header">
+                    <span class="exercise-number">Exercise 4</span>
+                    <h3>Composition Results</h3>
+                </div>
+
+                <div class="problem-display">
+                    <div class="relation-display">
+                        <svg viewBox="0 0 200 100" width="200" height="100" class="triangle-svg">
+                            <!-- Original triangle -->
+                            <polygon points="30,70 50,30 70,70" fill="rgba(124,58,237,0.2)" stroke="#7c3aed" stroke-width="2"/>
+                            <text x="50" y="85" font-size="7" fill="#7c3aed">Original</text>
+                            <!-- Reflection line -->
+                            <line x1="100" y1="20" x2="100" y2="90" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4"/>
+                            <!-- Reflected triangle -->
+                            <polygon points="130,70 150,30 170,70" fill="rgba(124,58,237,0.2)" stroke="#7c3aed" stroke-width="2" stroke-dasharray="3"/>
+                            <text x="150" y="85" font-size="7" fill="#7c3aed">After</text>
+                        </svg>
+                    </div>
+                    <div class="problem-text">
+                        <p>A triangle is reflected over a vertical line, then translated right.</p>
+                        <p class="hint">Both reflection and translation are rigid transformations.</p>
+                    </div>
+                </div>
+
+                <div class="step-container visible active" id="ex4-step1">
+                    <div class="step-header">
+                        <span class="step-badge">Step 1</span>
+                        <span>What type of transformations are reflection and translation?</span>
+                    </div>
+                    <div class="step-content">
+                        <div class="choice-group">
+                            <button class="choice-btn" onclick="checkStep1Ex4('rigid')">Rigid (preserve size and shape)</button>
+                            <button class="choice-btn" onclick="checkStep1Ex4('nonrigid')">Non-rigid (change size)</button>
+                        </div>
+                        <span class="result-badge" id="ex4-result1"></span>
+                    </div>
+                </div>
+
+                <div class="step-container hidden" id="ex4-step2">
+                    <div class="step-header">
+                        <span class="step-badge">Step 2</span>
+                        <span>Since both are rigid, the original and final triangles are:</span>
+                    </div>
+                    <div class="step-content">
+                        <div class="choice-group">
+                            <button class="choice-btn" onclick="checkStep2Ex4('congruent')">Congruent</button>
+                            <button class="choice-btn" onclick="checkStep2Ex4('similar')">Only similar</button>
+                        </div>
+                        <span class="result-badge" id="ex4-result2"></span>
+                    </div>
+                </div>
+
+                <div class="step-container hidden" id="ex4-step3">
+                    <div class="step-header complete">
+                        <span class="step-badge success">Complete!</span>
+                        <span>Any sequence of rigid transformations produces congruent figures!</span>
+                    </div>
+                    <button class="continue-btn" onclick="completeExercise(4)">Continue to Independent Practice</button>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="nav-btn secondary" onclick="prevPhase()">Previous</button>
+                <button class="nav-btn primary" onclick="nextPhase()" id="phase3Next" disabled>Continue</button>
+            </div>
+        </div>
+
+        <!-- Phase 4: Independent Practice -->
+        <div class="content-card" id="phase4">
+            <div class="phase-header">
+                <span class="phase-number">Phase 4</span>
+                <h2>Independent Practice</h2>
+            </div>
+
+            <p class="phase-description">Answer each question. Score: <span id="independentScore">0</span>/10</p>
+
+            <div class="independent-grid">
+                <div class="independent-problem">
+                    <span class="problem-number">1</span>
+                    <div class="problem-content">
+                        <p>Two translations performed in sequence - does order matter?</p>
+                        <div class="input-row">
+                            <button class="choice-btn small" onclick="checkIndependent(1, 'yes')">Yes</button>
+                            <button class="choice-btn small" onclick="checkIndependent(1, 'no')">No</button>
+                            <span class="result-icon" id="ind1-result"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="independent-problem">
+                    <span class="problem-number">2</span>
+                    <div class="problem-content">
+                        <p>Rotation then reflection - does order matter?</p>
+                        <div class="input-row">
+                            <button class="choice-btn small" onclick="checkIndependent(2, 'yes')">Yes</button>
+                            <button class="choice-btn small" onclick="checkIndependent(2, 'no')">No</button>
+                            <span class="result-icon" id="ind2-result"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="independent-problem">
+                    <span class="problem-number">3</span>
+                    <div class="problem-content">
+                        <p>How many lines of symmetry does a square have?</p>
+                        <div class="input-row">
+                            <button class="choice-btn small" onclick="checkIndependent(3, '2')">2</button>
+                            <button class="choice-btn small" onclick="checkIndependent(3, '4')">4</button>
+                            <button class="choice-btn small" onclick="checkIndependent(3, '8')">8</button>
+                            <span class="result-icon" id="ind3-result"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="independent-problem">
+                    <span class="problem-number">4</span>
+                    <div class="problem-content">
+                        <p>Smallest rotation for a square to map onto itself?</p>
+                        <div class="input-row">
+                            <button class="choice-btn small" onclick="checkIndependent(4, '45')">45°</button>
+                            <button class="choice-btn small" onclick="checkIndependent(4, '90')">90°</button>
+                            <button class="choice-btn small" onclick="checkIndependent(4, '180')">180°</button>
+                            <span class="result-icon" id="ind4-result"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="independent-problem">
+                    <span class="problem-number">5</span>
+                    <div class="problem-content">
+                        <p>Reflection + Translation = what type of figures?</p>
+                        <div class="input-row">
+                            <button class="choice-btn small" onclick="checkIndependent(5, 'congruent')">Congruent</button>
+                            <button class="choice-btn small" onclick="checkIndependent(5, 'similar')">Similar</button>
+                            <span class="result-icon" id="ind5-result"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="independent-problem">
+                    <span class="problem-number">6</span>
+                    <div class="problem-content">
+                        <p>What is a glide reflection?</p>
+                        <div class="input-row">
+                            <button class="choice-btn small" onclick="checkIndependent(6, 'tr')">Translation + Reflection</button>
+                            <button class="choice-btn small" onclick="checkIndependent(6, 'rr')">Rotation + Reflection</button>
+                            <span class="result-icon" id="ind6-result"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="independent-problem">
+                    <span class="problem-number">7</span>
+                    <div class="problem-content">
+                        <p>A regular hexagon's smallest rotation symmetry?</p>
+                        <div class="input-row">
+                            <button class="choice-btn small" onclick="checkIndependent(7, '30')">30°</button>
+                            <button class="choice-btn small" onclick="checkIndependent(7, '60')">60°</button>
+                            <button class="choice-btn small" onclick="checkIndependent(7, '90')">90°</button>
+                            <span class="result-icon" id="ind7-result"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="independent-problem">
+                    <span class="problem-number">8</span>
+                    <div class="problem-content">
+                        <p>Dilation followed by rotation creates:</p>
+                        <div class="input-row">
+                            <button class="choice-btn small" onclick="checkIndependent(8, 'congruent')">Congruent</button>
+                            <button class="choice-btn small" onclick="checkIndependent(8, 'similar')">Similar</button>
+                            <span class="result-icon" id="ind8-result"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="independent-problem">
+                    <span class="problem-number">9</span>
+                    <div class="problem-content">
+                        <p>Two reflections over intersecting lines equals:</p>
+                        <div class="input-row">
+                            <button class="choice-btn small" onclick="checkIndependent(9, 'translation')">Translation</button>
+                            <button class="choice-btn small" onclick="checkIndependent(9, 'rotation')">Rotation</button>
+                            <span class="result-icon" id="ind9-result"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="independent-problem">
+                    <span class="problem-number">10</span>
+                    <div class="problem-content">
+                        <p>Lines of symmetry in a regular octagon?</p>
+                        <div class="input-row">
+                            <button class="choice-btn small" onclick="checkIndependent(10, '4')">4</button>
+                            <button class="choice-btn small" onclick="checkIndependent(10, '8')">8</button>
+                            <button class="choice-btn small" onclick="checkIndependent(10, '16')">16</button>
+                            <span class="result-icon" id="ind10-result"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-score" id="finalScore" style="display: none;">
+                <h3>Practice Complete!</h3>
+                <p>Your Score: <span id="finalScoreNumber"></span></p>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="nav-btn secondary" onclick="prevPhase()">Previous</button>
+                <button class="nav-btn primary" onclick="nextPhase()" id="phase4Next" disabled>Complete Lesson</button>
+            </div>
+        </div>
+
+        <!-- Phase 5: Completion -->
+        <div class="content-card" id="phase5">
+            <div class="phase-header">
+                <span class="phase-number">Phase 5</span>
+                <h2>Lesson Complete!</h2>
+            </div>
+
+            <div class="completion-content">
+                <div class="completion-icon">
+                    <svg viewBox="0 0 100 100" width="100" height="100">
+                        <circle cx="50" cy="50" r="45" fill="#7c3aed" opacity="0.2"/>
+                        <!-- Symmetry symbol -->
+                        <line x1="50" y1="15" x2="50" y2="85" stroke="#7c3aed" stroke-width="2" stroke-dasharray="4"/>
+                        <polygon points="30,60 50,25 70,60" fill="none" stroke="#7c3aed" stroke-width="2"/>
+                        <path d="M35,75 L45,85 L70,55" fill="none" stroke="#10b981" stroke-width="4" stroke-linecap="round"/>
+                    </svg>
+                </div>
+
+                <h3>Congratulations!</h3>
+                <p>You've completed Transformation Sequences and Symmetry!</p>
+
+                <div class="summary-box">
+                    <h4>What You Learned:</h4>
+                    <ul>
+                        <li>Order matters when composing most transformations</li>
+                        <li>Two translations always commute (order doesn't matter)</li>
+                        <li>Line symmetry: reflection maps figure onto itself</li>
+                        <li>Rotational symmetry: rotation maps figure onto itself</li>
+                        <li>Glide reflection = translation + reflection</li>
+                        <li>Two reflections over parallel lines = translation</li>
+                        <li>Two reflections over intersecting lines = rotation</li>
+                    </ul>
+                </div>
+
+                <div class="score-summary">
+                    <h4>Your Results</h4>
+                    <div class="score-details">
+                        <div class="score-item">
+                            <span class="score-label">Guided Practice</span>
+                            <span class="score-value">4/4</span>
+                        </div>
+                        <div class="score-item">
+                            <span class="score-label">Independent Practice</span>
+                            <span class="score-value" id="finalIndScore">0/10</span>
+                        </div>
+                        <div class="score-item total">
+                            <span class="score-label">Overall Score</span>
+                            <span class="score-value" id="overallScore">4/14</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="print-summary">
+                    <p><strong>Standard:</strong> MA.912.GR.2.3</p>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="action-btn" onclick="printResults()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9V2h12v7"></path>
+                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                            <rect x="6" y="14" width="12" height="8"></rect>
+                        </svg>
+                        Print Results
+                    </button>
+                    <button class="action-btn secondary" onclick="restartLesson()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                            <path d="M3 3v5h5"></path>
+                        </svg>
+                        Restart Lesson
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Print Results Section -->
+    <div class="print-results">
+        <div class="results-header">
+            <h1>Transformation Sequences and Symmetry</h1>
+            <p>Student Results</p>
+            <div class="results-info">
+                <span>Name: _______________________</span>
+                <span>Date: _____________</span>
+            </div>
+            <div class="results-standard">Standard: MA.912.GR.2.3</div>
+        </div>
+
+        <div class="results-section">
+            <h2>Guided Practice: 4/4</h2>
+            <p class="results-note">All guided exercises completed successfully.</p>
+        </div>
+
+        <div class="results-section">
+            <h2>Independent Practice Results</h2>
+            <div id="printIndependentResults"></div>
+        </div>
+
+        <div class="results-final">
+            <h2>Final Score: <span id="printFinalScore"></span></h2>
+            <p>Percentage: <span id="printPercentage"></span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
