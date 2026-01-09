@@ -178,6 +178,32 @@
 
                     <div class="concept-card">
                         <div class="concept-visual">
+                            <svg viewBox="0 0 120 80" width="120" height="80">
+                                <!-- Starting point -->
+                                <circle cx="20" cy="60" r="6" fill="#7c3aed"/>
+                                <text x="20" y="75" font-size="8" fill="#7c3aed" text-anchor="middle">Start</text>
+                                <!-- Path 1: Right then Up -->
+                                <path d="M26,60 L60,60" stroke="#10b981" stroke-width="2" marker-end="url(#arrow)"/>
+                                <path d="M60,60 L60,25" stroke="#10b981" stroke-width="2"/>
+                                <text x="43" y="72" font-size="7" fill="#10b981">1st</text>
+                                <!-- Path 2: Up then Right -->
+                                <path d="M20,54 L20,25" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4"/>
+                                <path d="M20,25 L54,25" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4"/>
+                                <text x="8" y="40" font-size="7" fill="#f59e0b">2nd</text>
+                                <!-- End point (same for both!) -->
+                                <circle cx="60" cy="25" r="6" fill="#10b981"/>
+                                <text x="60" y="15" font-size="8" fill="#10b981" text-anchor="middle">Same!</text>
+                            </svg>
+                        </div>
+                        <div class="concept-info">
+                            <h4>Exception: Translations Commute!</h4>
+                            <p>Two translations can be done in <strong>any order</strong> and give the same result.</p>
+                            <p class="example">Right 3, then Up 2 = Up 2, then Right 3 (both end at same spot!)</p>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <div class="concept-visual">
                             <div class="transform-box line-sym">
                                 <span class="transform-icon">|</span>
                                 <span class="transform-label">Line Sym</span>
@@ -204,6 +230,34 @@
                         </div>
                     </div>
 
+                    <div class="formula-highlight">
+                        <h4>Regular Polygon Symmetry Rules</h4>
+                        <div class="formula-box">Regular n-gon: n lines of symmetry, rotation angle = 360°/n</div>
+                        <p class="formula-note">
+                            <strong>Examples:</strong> Square (4 sides) → 4 lines, 90° rotation |
+                            Hexagon (6 sides) → 6 lines, 60° rotation |
+                            Octagon (8 sides) → 8 lines, 45° rotation
+                        </p>
+                    </div>
+
+                    <div class="concept-card">
+                        <div class="concept-visual">
+                            <svg viewBox="0 0 80 80" width="80" height="80">
+                                <circle cx="40" cy="40" r="30" fill="rgba(124,58,237,0.2)" stroke="#7c3aed" stroke-width="2"/>
+                                <line x1="40" y1="5" x2="40" y2="75" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3"/>
+                                <line x1="5" y1="40" x2="75" y2="40" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3"/>
+                                <line x1="15" y1="15" x2="65" y2="65" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3"/>
+                                <line x1="65" y1="15" x2="15" y2="65" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3"/>
+                                <text x="40" y="44" font-size="6" fill="#7c3aed" text-anchor="middle">∞</text>
+                            </svg>
+                        </div>
+                        <div class="concept-info">
+                            <h4>Circle: Infinite Symmetry</h4>
+                            <p>A circle has <strong>infinite lines of symmetry</strong> (any line through center) and <strong>infinite rotational symmetry</strong> (any angle works!).</p>
+                            <p class="example">The circle is the most symmetric shape!</p>
+                        </div>
+                    </div>
+
                     <div class="concept-card">
                         <div class="concept-visual">
                             <div class="transform-box glide">
@@ -215,6 +269,37 @@
                             <h4>Glide Reflection</h4>
                             <p>A translation followed by a reflection over a line parallel to the translation direction.</p>
                             <p class="example">Footprints in sand show glide reflection!</p>
+                        </div>
+                    </div>
+
+                    <div class="formula-highlight">
+                        <h4>Two Reflections Theorems</h4>
+                        <div class="formula-box">Parallel lines → Translation | Intersecting lines → Rotation</div>
+                        <p class="formula-note">
+                            <strong>Parallel:</strong> Two reflections over parallel lines = translation (distance = 2× gap between lines)<br>
+                            <strong>Intersecting:</strong> Two reflections over intersecting lines = rotation (angle = 2× angle between lines)
+                        </p>
+                    </div>
+
+                    <div class="concept-card">
+                        <div class="concept-visual">
+                            <svg viewBox="0 0 100 80" width="100" height="80">
+                                <!-- Triangle going back and forth -->
+                                <polygon points="30,50 45,25 60,50" fill="rgba(124,58,237,0.3)" stroke="#7c3aed" stroke-width="2"/>
+                                <!-- Reflection line -->
+                                <line x1="50" y1="10" x2="50" y2="70" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4"/>
+                                <!-- Arrow showing back and forth -->
+                                <path d="M62,35 C75,35 75,35 62,35" stroke="#10b981" stroke-width="0"/>
+                                <text x="75" y="30" font-size="7" fill="#10b981">reflect</text>
+                                <text x="75" y="40" font-size="7" fill="#10b981">twice</text>
+                                <text x="75" y="55" font-size="8" fill="#7c3aed">= same!</text>
+                            </svg>
+                        </div>
+                        <div class="concept-info">
+                            <h4>Identity: Back to Original</h4>
+                            <p><strong>Same reflection twice</strong> = back to original position</p>
+                            <p><strong>Rotation of 360°</strong> = back to original position</p>
+                            <p class="example">180° + 180° = 360° = back where you started!</p>
                         </div>
                     </div>
 
