@@ -678,6 +678,13 @@ body {
     font-weight: bold;
 }
 
+.correct-answer {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #059669;
+    margin-left: 8px;
+}
+
 /* Final Score */
 .final-score {
     background: linear-gradient(135deg, #faf5ff, #f3e8ff);

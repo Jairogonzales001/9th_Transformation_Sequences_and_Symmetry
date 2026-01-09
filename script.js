@@ -366,7 +366,7 @@ function checkIndependent(problemNum, answer) {
         result.style.color = '#10b981';
         independentScore++;
     } else {
-        result.textContent = '✗';
+        result.innerHTML = `✗ <span class="correct-answer">Correct: ${answerLabels[problemNum][correctAnswer]}</span>`;
         result.style.color = '#ef4444';
     }
 
