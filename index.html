@@ -541,7 +541,7 @@
                 <h2>Independent Practice</h2>
             </div>
 
-            <p class="phase-description">Answer each question. Score: <span id="independentScore">0</span>/10</p>
+            <p class="phase-description">Answer each question. Score: <span id="independentScore">0</span>/20</p>
 
             <div class="independent-grid">
                 <div class="independent-problem">
@@ -667,6 +667,133 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Challenge Questions (11-20) -->
+                <div class="independent-problem">
+                    <span class="problem-number">11</span>
+                    <div class="problem-content">
+                        <p>Two reflections over parallel lines equals what single transformation?</p>
+                        <div class="input-row">
+                            <button class="choice-btn small" onclick="checkIndependent(11, 'translation')">Translation</button>
+                            <button class="choice-btn small" onclick="checkIndependent(11, 'rotation')">Rotation</button>
+                            <button class="choice-btn small" onclick="checkIndependent(11, 'reflection')">Reflection</button>
+                            <span class="result-icon" id="ind11-result"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="independent-problem">
+                    <span class="problem-number">12</span>
+                    <div class="problem-content">
+                        <p>An equilateral triangle has rotational symmetry of order:</p>
+                        <div class="input-row">
+                            <button class="choice-btn small" onclick="checkIndependent(12, '2')">2</button>
+                            <button class="choice-btn small" onclick="checkIndependent(12, '3')">3</button>
+                            <button class="choice-btn small" onclick="checkIndependent(12, '6')">6</button>
+                            <span class="result-icon" id="ind12-result"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="independent-problem">
+                    <span class="problem-number">13</span>
+                    <div class="problem-content">
+                        <p>A figure is rotated 180° twice. The net result is:</p>
+                        <div class="input-row">
+                            <button class="choice-btn small" onclick="checkIndependent(13, 'original')">Back to original</button>
+                            <button class="choice-btn small" onclick="checkIndependent(13, '180')">Rotated 180°</button>
+                            <span class="result-icon" id="ind13-result"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="independent-problem">
+                    <span class="problem-number">14</span>
+                    <div class="problem-content">
+                        <p>Which shape has infinite lines of symmetry?</p>
+                        <div class="input-row">
+                            <button class="choice-btn small" onclick="checkIndependent(14, 'square')">Square</button>
+                            <button class="choice-btn small" onclick="checkIndependent(14, 'circle')">Circle</button>
+                            <button class="choice-btn small" onclick="checkIndependent(14, 'hexagon')">Hexagon</button>
+                            <span class="result-icon" id="ind14-result"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="independent-problem">
+                    <span class="problem-number">15</span>
+                    <div class="problem-content">
+                        <p>Reflecting a figure over the same line twice results in:</p>
+                        <div class="input-row">
+                            <button class="choice-btn small" onclick="checkIndependent(15, 'original')">Original position</button>
+                            <button class="choice-btn small" onclick="checkIndependent(15, 'translated')">Translated figure</button>
+                            <span class="result-icon" id="ind15-result"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="independent-problem">
+                    <span class="problem-number">16</span>
+                    <div class="problem-content">
+                        <p>A composition of 3 rigid transformations produces:</p>
+                        <div class="input-row">
+                            <button class="choice-btn small" onclick="checkIndependent(16, 'congruent')">Congruent figures</button>
+                            <button class="choice-btn small" onclick="checkIndependent(16, 'similar')">Similar figures</button>
+                            <span class="result-icon" id="ind16-result"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="independent-problem">
+                    <span class="problem-number">17</span>
+                    <div class="problem-content">
+                        <p>Which letter has BOTH line symmetry AND rotational symmetry?</p>
+                        <div class="input-row">
+                            <button class="choice-btn small" onclick="checkIndependent(17, 'A')">A</button>
+                            <button class="choice-btn small" onclick="checkIndependent(17, 'H')">H</button>
+                            <button class="choice-btn small" onclick="checkIndependent(17, 'N')">N</button>
+                            <span class="result-icon" id="ind17-result"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="independent-problem">
+                    <span class="problem-number">18</span>
+                    <div class="problem-content">
+                        <p>Two reflections over lines meeting at 45° create a rotation of:</p>
+                        <div class="input-row">
+                            <button class="choice-btn small" onclick="checkIndependent(18, '45')">45°</button>
+                            <button class="choice-btn small" onclick="checkIndependent(18, '90')">90°</button>
+                            <button class="choice-btn small" onclick="checkIndependent(18, '180')">180°</button>
+                            <span class="result-icon" id="ind18-result"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="independent-problem">
+                    <span class="problem-number">19</span>
+                    <div class="problem-content">
+                        <p>A regular polygon has 12 lines of symmetry. How many sides does it have?</p>
+                        <div class="input-row">
+                            <button class="choice-btn small" onclick="checkIndependent(19, '6')">6</button>
+                            <button class="choice-btn small" onclick="checkIndependent(19, '12')">12</button>
+                            <button class="choice-btn small" onclick="checkIndependent(19, '24')">24</button>
+                            <span class="result-icon" id="ind19-result"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="independent-problem">
+                    <span class="problem-number">20</span>
+                    <div class="problem-content">
+                        <p>Translate 5 units right, reflect over y-axis, translate 5 units right. Net result equals:</p>
+                        <div class="input-row">
+                            <button class="choice-btn small" onclick="checkIndependent(20, 'reflection')">Reflection over y-axis</button>
+                            <button class="choice-btn small" onclick="checkIndependent(20, 'translation')">Translation 5 units right</button>
+                            <span class="result-icon" id="ind20-result"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="final-score" id="finalScore" style="display: none;">
@@ -723,11 +850,11 @@
                         </div>
                         <div class="score-item">
                             <span class="score-label">Independent Practice</span>
-                            <span class="score-value" id="finalIndScore">0/10</span>
+                            <span class="score-value" id="finalIndScore">0/20</span>
                         </div>
                         <div class="score-item total">
                             <span class="score-label">Overall Score</span>
-                            <span class="score-value" id="overallScore">4/14</span>
+                            <span class="score-value" id="overallScore">4/24</span>
                         </div>
                     </div>
                 </div>

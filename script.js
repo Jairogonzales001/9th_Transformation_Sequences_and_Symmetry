@@ -7,7 +7,7 @@ let currentPhase = 1;
 let exercisesCompleted = 0;
 let independentScore = 0;
 let independentAnswered = 0;
-const totalIndependent = 10;
+const totalIndependent = 20;
 
 // Correct answers for independent practice
 // Answer key:
@@ -21,6 +21,17 @@ const totalIndependent = 10;
 // 8: 'similar' - Dilation + rotation = similar
 // 9: 'rotation' - Two reflections over intersecting lines = rotation
 // 10: '8' - Regular octagon has 8 lines of symmetry
+// Challenge Questions (11-20):
+// 11: 'translation' - Two reflections over parallel lines = translation
+// 12: '3' - Equilateral triangle has order 3 rotational symmetry (120°, 240°, 360°)
+// 13: 'original' - 180° + 180° = 360° = back to original
+// 14: 'circle' - Circle has infinite lines of symmetry
+// 15: 'original' - Reflecting twice over same line = identity
+// 16: 'congruent' - Any composition of rigid transformations = congruent
+// 17: 'H' - H has both vertical/horizontal line symmetry AND 180° rotational symmetry
+// 18: '90' - Two reflections = rotation of 2× the angle between lines (2×45°=90°)
+// 19: '12' - Regular n-gon has n lines of symmetry
+// 20: 'reflection' - The translations cancel out, leaving just the reflection
 const independentAnswers = {
     1: 'no',
     2: 'yes',
@@ -31,7 +42,17 @@ const independentAnswers = {
     7: '60',
     8: 'similar',
     9: 'rotation',
-    10: '8'
+    10: '8',
+    11: 'translation',
+    12: '3',
+    13: 'original',
+    14: 'circle',
+    15: 'original',
+    16: 'congruent',
+    17: 'H',
+    18: '90',
+    19: '12',
+    20: 'reflection'
 };
 
 // Problem descriptions for print results
@@ -45,7 +66,17 @@ const problemDescriptions = {
     7: "Regular hexagon's smallest rotation symmetry?",
     8: "Dilation + rotation creates?",
     9: "Two reflections over intersecting lines?",
-    10: "Lines of symmetry in regular octagon?"
+    10: "Lines of symmetry in regular octagon?",
+    11: "Two reflections over parallel lines equals?",
+    12: "Equilateral triangle's rotational symmetry order?",
+    13: "A figure rotated 180° twice - net result?",
+    14: "Which shape has infinite lines of symmetry?",
+    15: "Reflecting twice over the same line?",
+    16: "Composition of 3 rigid transformations produces?",
+    17: "Which letter has both line AND rotational symmetry?",
+    18: "Two reflections over lines meeting at 45°?",
+    19: "Polygon with 12 lines of symmetry has how many sides?",
+    20: "Translate right, reflect y-axis, translate right - net result?"
 };
 
 // Answer labels for printing
@@ -59,7 +90,17 @@ const answerLabels = {
     7: { '30': '30°', '60': '60°', '90': '90°' },
     8: { congruent: 'Congruent', similar: 'Similar' },
     9: { translation: 'Translation', rotation: 'Rotation' },
-    10: { '4': '4', '8': '8', '16': '16' }
+    10: { '4': '4', '8': '8', '16': '16' },
+    11: { translation: 'Translation', rotation: 'Rotation', reflection: 'Reflection' },
+    12: { '2': '2', '3': '3', '6': '6' },
+    13: { original: 'Back to original', '180': 'Rotated 180°' },
+    14: { square: 'Square', circle: 'Circle', hexagon: 'Hexagon' },
+    15: { original: 'Original position', translated: 'Translated figure' },
+    16: { congruent: 'Congruent figures', similar: 'Similar figures' },
+    17: { A: 'A', H: 'H', N: 'N' },
+    18: { '45': '45°', '90': '90°', '180': '180°' },
+    19: { '6': '6', '12': '12', '24': '24' },
+    20: { reflection: 'Reflection over y-axis', translation: 'Translation 5 units right' }
 };
 
 // Track student answers for printing
@@ -352,7 +393,7 @@ function showFinalScore() {
 function updateFinalScores() {
     document.getElementById('finalIndScore').textContent = `${independentScore}/${totalIndependent}`;
     const overallScore = 4 + independentScore;
-    document.getElementById('overallScore').textContent = `${overallScore}/14`;
+    document.getElementById('overallScore').textContent = `${overallScore}/24`;
 }
 
 // ========== Print Functions ==========
@@ -388,9 +429,9 @@ function printResults() {
     }
 
     const overallScore = 4 + independentScore;
-    const percentage = Math.round((overallScore / 14) * 100);
+    const percentage = Math.round((overallScore / 24) * 100);
 
-    document.getElementById('printFinalScore').textContent = `${overallScore}/14`;
+    document.getElementById('printFinalScore').textContent = `${overallScore}/24`;
     document.getElementById('printPercentage').textContent = `${percentage}%`;
 
     document.body.classList.remove('printing-worksheet');
